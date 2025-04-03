@@ -63,3 +63,7 @@
 .footer-links li a:hover {
     text-decoration: underline;
 }
+#rendelesfej {
+  text-align: center;
+  font-size: 60px;
+}
