@@ -67,3 +67,9 @@
   text-align: center;
   font-size: 60px;
 }
+.rendeleselem{
+  transition: 0.3s ease;
+}
+.rendeleselem:hover {
+  transform: scale(1.05);
+}
