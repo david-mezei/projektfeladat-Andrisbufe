@@ -7,7 +7,6 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=bebas-neue:400" rel="stylesheet" />
     <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
     <div class="container">
@@ -31,11 +30,22 @@
                 <th class="rendeleselem"><img src="assets/NagySzenya.png" alt="nagy"></th>
             </tr>
             <tr>
-                <th class="rendeleselem"></th>
+                <th class="rendeleselemar">470 Ft</th>
+                <th class="rendeleselemar">790 Ft</th>
+                <th class="rendeleselemar">970 Ft</th>
+            </tr>
+            <tr>
+                <th class="rendeleselem"><img src="assets/Pepsi.png" alt="pepsi"></th>
+                <th class="rendeleselem"><img src="assets/Lipton.png" alt="lipton"></th>
+                <th class="rendeleselem"><img src="assets/Asvanyviz.png" alt="asvanyviz"></th>
+            </tr>
+            <tr>
+                <th class="rendeleselemar">450 Ft</th>
+                <th class="rendeleselemar">650 Ft</th>
+                <th class="rendeleselemar">650 Ft</th>
             </tr>
         </table>
     </div>
-
     <footer>
         <div class="footer-content">
             <p>&copy; 2025 Andris Bufe. Minden jog fenntartva.</p>
@@ -51,5 +61,28 @@
         </div>
     </footer>
     
+    <h2>Kattints a képre!</h2>
+    <img src="https://via.placeholder.com/200" alt="Szendvics" id="sandwichImg" style="cursor: pointer;">
+  
+    <div id="overlay"></div>
+  
+    <div id="popup">
+      <h3>Mit kérsz bele?</h3>
+      <div class="popup-options">
+        <label><input type="radio" name="zoldseg" value="Salátás" checked> Salátás</label>
+        <label><input type="radio" name="zoldseg" value="Uborkás"> Uborkás</label>
+  
+        <label><input type="checkbox" name="szosz" value="Ketchup"> Ketchup</label>
+        <label><input type="checkbox" name="szosz" value="Mustár"> Mustár</label>
+        <label><input type="checkbox" name="szosz" value="Majonéz"> Majonéz</label>
+      </div>
+  
+      <div class="popup-buttons">
+        <button onclick="submitForm()">OK</button>
+        <button onclick="closePopup()">Mégse</button>
+      </div>
+    </div>
+
+<script src="script_rendeles.js"></script>
 </body>
 </html>

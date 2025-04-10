@@ -73,3 +73,45 @@
 .rendeleselem:hover {
   transform: scale(1.05);
 }
+.rendeleselemar{
+  font-family: 'Bebas Neue', display;
+  font-size: 30px;
+}
+#oldalpanel{
+  position: relative;
+  top: 0px;
+  margin-left: 100px;
+  width: 150px;
+  height: 100%;
+}
+
+#popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background: white;
+  border: 2px solid #ccc;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
+
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 999;
+}
+
+.popup-options label {
+  display: block;
+  margin: 5px 0;
+}
+
+.popup-buttons {
+  margin-top: 10px;
+}
