@@ -124,3 +124,28 @@ body {
 .slider-nav a:hover {
 	opacity: 1;
 }
+
+
+.ajanlatok-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .ajanlat-box {
+    flex: 1;
+    min-width: 250px;
+    border: 2px solid #cc9600;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background-color: #f9f9f9;
+    transition: transform 0.2s ease;
+  }
+  
+  .ajanlat-box:hover {
+    transform: translateY(-5px);
+  }
