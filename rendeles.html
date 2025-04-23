@@ -25,9 +25,9 @@
 
         <table style="margin-left: auto; margin-right: auto;">
             <tr>
-                <th class="rendeleselem"><img src="assets/KicsiSzenya.png" alt="kicsi"></th>
-                <th class="rendeleselem"><img src="assets/KozepesSzenya.png" alt="kozepes"></th>
-                <th class="rendeleselem"><img src="assets/NagySzenya.png" alt="nagy"></th>
+                <th class="rendeleselem"><img src="assets/KicsiSzenya.png" class="popup-trigger" alt="kicsi"></th>
+                <th class="rendeleselem"><img src="assets/KozepesSzenya.png" class="popup-trigger" alt="kozepes"></th>
+                <th class="rendeleselem"><img src="assets/NagySzenya.png" class="popup-trigger" alt="nagy"></th>
             </tr>
             <tr>
                 <th class="rendeleselemar">470 Ft</th>
@@ -61,27 +61,46 @@
         </div>
     </footer>
     
-    <h2>Kattints a képre!</h2>
-    <img src="https://via.placeholder.com/200" alt="Szendvics" id="sandwichImg" style="cursor: pointer;">
-  
+    
     <div id="overlay"></div>
   
-    <div id="popup">
-      <h3>Mit kérsz bele?</h3>
-      <div class="popup-options">
-        <label><input type="radio" name="zoldseg" value="Salátás" checked> Salátás</label>
-        <label><input type="radio" name="zoldseg" value="Uborkás"> Uborkás</label>
+<div id="popup" class="popup">
+  <h3 class="popup-title">Mit kérsz bele?</h3>
+
+  <div class="popup-options">
+    <label><input type="radio" name="zoldseg" value="Salátás" checked> 🥬 Salátás</label>
+    <label><input type="radio" name="zoldseg" value="Uborkás"> 🥒 Uborkás</label>
+    <label><input type="radio" name="zoldseg" value="Zsöldség nélkül"> Zsöldség nélkül</label>
+
+    <label><input type="checkbox" name="szosz" value="Ketchup"> Ketchup</label>
+    <label><input type="checkbox" name="szosz" value="Mustár"> Mustár</label>
+    <label><input type="checkbox" name="szosz" value="Majonéz"> Majonéz</label>
+    <label><input type="checkbox" name="szosz" value="Marha erős"> Marha erős</label>
+  </div>
+
+  <div class="popup-buttons">
+    <button onclick="submitForm()">Kosárba</button>
+    <button onclick="closePopup()" class="cancel">Mégse</button>
+  </div>
+</div>
+
+<!-- Kosár ikon -->
+<div id="cart-icon" onclick="toggleCart()" title="Kosár">
+    🛒
+    <span id="cart-count">0</span>
+  </div>
   
-        <label><input type="checkbox" name="szosz" value="Ketchup"> Ketchup</label>
-        <label><input type="checkbox" name="szosz" value="Mustár"> Mustár</label>
-        <label><input type="checkbox" name="szosz" value="Majonéz"> Majonéz</label>
-      </div>
-  
-      <div class="popup-buttons">
-        <button onclick="submitForm()">OK</button>
-        <button onclick="closePopup()">Mégse</button>
-      </div>
+  <!-- Kosár panel -->
+  <div id="cart-panel">
+    <h3>Kosár</h3>
+    <ul id="cart-items">
+      <li>A kosár üres.</li>
+    </ul>
+    <div class="cart-footer">
+      <button onclick="checkout()">Fizetés</button>
     </div>
+  </div>
+  
 
 <script src="script_rendeles.js"></script>
 </body>
