@@ -25,9 +25,9 @@
 
         <table style="margin-left: auto; margin-right: auto;">
             <tr>
-                <th class="rendeleselem"><img src="assets/KicsiSzenya.png" class="popup-trigger" alt="kicsi"></th>
-                <th class="rendeleselem"><img src="assets/KozepesSzenya.png" class="popup-trigger" alt="kozepes"></th>
-                <th class="rendeleselem"><img src="assets/NagySzenya.png" class="popup-trigger" alt="nagy"></th>
+                <th class="rendeleselem"><img src="assets/KicsiSzenya.png" class="popup-trigger" alt="Kicsi szendvics" data-type="szenya" data-price="470"></th>
+                <th class="rendeleselem"><img src="assets/KozepesSzenya.png" class="popup-trigger" alt="Közepes szendvics" data-type="szenya" data-price="790"></th>
+                <th class="rendeleselem"><img src="assets/NagySzenya.png" class="popup-trigger" alt="Nagy szendvics" data-type="szenya" data-price="970"></th>
             </tr>
             <tr>
                 <th class="rendeleselemar">470 Ft</th>
@@ -35,9 +35,9 @@
                 <th class="rendeleselemar">970 Ft</th>
             </tr>
             <tr>
-                <th class="rendeleselem"><img src="assets/Pepsi.png" alt="pepsi"></th>
-                <th class="rendeleselem"><img src="assets/Lipton.png" alt="lipton"></th>
-                <th class="rendeleselem"><img src="assets/Asvanyviz.png" alt="asvanyviz"></th>
+                <th class="rendeleselem"><img src="assets/Pepsi.png" class="popup-trigger" alt="Pepsi" data-type="ital" data-price="450"></th>
+                <th class="rendeleselem"><img src="assets/Lipton.png" class="popup-trigger" alt="Lipton" data-type="ital" data-price="650"></th>
+                <th class="rendeleselem"><img src="assets/Asvanyviz.png" class="popup-trigger" alt="Ásvanyviz" data-type="ital" data-price="650"></th>
             </tr>
             <tr>
                 <th class="rendeleselemar">450 Ft</th>
@@ -85,23 +85,33 @@
 </div>
 
 <!-- Kosár ikon -->
-<div id="cart-icon" onclick="toggleCart()" title="Kosár">
-    🛒
-    <span id="cart-count">0</span>
-  </div>
+<div id="cart-icon" onclick="toggleCartPopup()">
+  🛒 <span id="cart-count">0</span>
+</div>
+
+<div id="cart-popup">
+  <ul id="cart-items"></ul>
+  <div id="cart-total">Végösszeg: 0 Ft</div>
+  <button id="checkout-btn" onclick="openPaymentPopup()">Rendelés leadása</button>
+</div>
+
+<div id="paymentPopup" class="popup">
+    <h3>Melyik szünetben veszed át?</h3>
+    <div class="payment-options">
+        <label><input type="radio" name="szunet" value="7:00-7:15" checked> 7:00-7:15</label>
+        <label><input type="radio" name="szunet" value="8:00-8:10"> 8:00-8:10</label>
+        <label><input type="radio" name="szunet" value="8:55-9:05"> 8:55-9:05</label>
+        <label><input type="radio" name="szunet" value="9:50-10:00"> 9:50-10:00</label>
+        <label><input type="radio" name="szunet" value="10:45-10:55"> 10:45-10:55</label>
+        <label><input type="radio" name="szunet" value="11:40-11:55"> 11:40-11:55</label>        
+    </div>
   
-  <!-- Kosár panel -->
-  <div id="cart-panel">
-    <h3>Kosár</h3>
-    <ul id="cart-items">
-      <li>A kosár üres.</li>
-    </ul>
-    <div class="cart-footer">
-      <button onclick="checkout()">Fizetés</button>
+    <div class="popup-buttons">
+      <button onclick="finalizeOrder()">Megrendelem</button>
+      <button onclick="closePaymentPopup()">Mégse</button>
     </div>
   </div>
   
-
 <script src="script_rendeles.js"></script>
 </body>
 </html>

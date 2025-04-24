@@ -2,28 +2,68 @@ const images = document.querySelectorAll('.popup-trigger');
 const popup = document.getElementById('popup');
 const overlay = document.getElementById('overlay');
 
-// Minden kép megkapja az eventlistenert
-images.forEach(img => {
+//Kosár
+let cart = [];
+let selectedProduct = null;
+
+document.querySelectorAll('.popup-trigger').forEach(img => {
   img.addEventListener('click', () => {
-    popup.style.display = 'block';
-    overlay.style.display = 'block';
+    const name = img.alt;
+    const type = img.getAttribute('data-type');
+    const price = parseInt(img.getAttribute('data-price'));
+
+    if (type === "szenya") {
+      selectedProduct = { name, price };
+      document.getElementById('popup').style.display = 'block';
+      document.getElementById('overlay').style.display = 'block';
+    } else if (type === "ital") {
+      addToCart({ name, price });
+    } else {
+      console.warn("Ismeretlen terméktípus:", type);
+    }
   });
 });
 
-function closePopup() {
-  popup.style.display = 'none';
-  overlay.style.display = 'none';
+
+
+function submitForm() {
+  if (!selectedProduct) return;
+
+  const zoldseg = document.querySelector('input[name="zoldseg"]:checked')?.value || '';
+  const szoszok = Array.from(document.querySelectorAll('input[name="szosz"]:checked')).map(el => el.value);
+  const extras = [zoldseg, ...szoszok].filter(x => x).join(', ');
+
+  const finalProduct = {
+    name: `${selectedProduct.name} (${extras})`,
+    price: selectedProduct.price
+  };
+
+  addToCart(finalProduct);
+  closePopup();
 }
 
-let cart = [];
-
-function toggleCart() {
-  document.getElementById('cart-panel').classList.toggle('open');
-}
-
-function addToCart(itemName) {
-  cart.push(itemName);
+function addToCart(product) {
+  cart.push(product);
   updateCartUI();
+}
+
+function updateCartUI() {
+  const cartItems = document.getElementById('cart-items');
+  const cartCount = document.getElementById('cart-count');
+  const cartTotal = document.getElementById('cart-total');
+
+  cartItems.innerHTML = '';
+  let total = 0;
+
+  cart.forEach((item, index) => {
+    const li = document.createElement('li');
+    li.innerHTML = `${item.name} - ${item.price} Ft <button onclick="removeFromCart(${index})">🗑️</button>`;
+    cartItems.appendChild(li);
+    total += item.price;
+  });
+
+  cartCount.textContent = cart.length;
+  cartTotal.textContent = `Végösszeg: ${total} Ft`;
 }
 
 function removeFromCart(index) {
@@ -31,39 +71,35 @@ function removeFromCart(index) {
   updateCartUI();
 }
 
-function updateCartUI() {
-  const itemsContainer = document.getElementById('cart-items');
-  const count = document.getElementById('cart-count');
+function closePopup() {
+  document.getElementById('popup').style.display = 'none';
+  document.getElementById('overlay').style.display = 'none';
+  selectedProduct = null;
 
-  itemsContainer.innerHTML = '';
-
-  if (cart.length === 0) {
-    itemsContainer.innerHTML = '<li>Nincs még tétel a kosárban.</li>';
-  } else {
-    cart.forEach((item, i) => {
-      const li = document.createElement('li');
-      li.innerHTML = `${item} <button onclick="removeFromCart(${i})">✖</button>`;
-      itemsContainer.appendChild(li);
-    });
-  }
-
-  count.textContent = cart.length;
+  document.querySelector('input[name="zoldseg"][value="Salátás"]').checked = true;
+  document.querySelectorAll('input[name="szosz"]').forEach(cb => cb.checked = false);
 }
 
-function checkout() {
-  alert("Köszi a rendelést! 🎉");
-  cart = [];
-  updateCartUI();
-  toggleCart();
+function toggleCartPopup() {
+  const cartPopup = document.getElementById('cart-popup');
+  cartPopup.style.display = cartPopup.style.display === 'block' ? 'none' : 'block';
 }
 
+function openPaymentPopup() {
+  document.getElementById("paymentPopup").style.display = "block";
+  overlay.style.display = "block";
+}
 
-function submitForm() {
-  const zoldseg = document.querySelector('input[name="zoldseg"]:checked')?.value;
-  const szoszok = Array.from(document.querySelectorAll('input[name="szosz"]:checked')).map(s => s.value);
+function closePaymentPopup() {
+  document.getElementById("paymentPopup").style.display = "none";
+  overlay.style.display = "none";
+}
 
-  const item = `${zoldseg} + ${szoszok.join(', ')}`;
-  addToCart(item);
+function finalizeOrder() {
+  const selectedBreak = document.querySelector('input[name="szunet"]:checked').value;
+  alert(`Köszi a rendelést! Átveszed: ${selectedBreak}`);
 
-  closePopup(); // ha van ilyen funkciód
+  cart = []; // ürítjük a kosarat
+  updateCartDisplay(); // frissítjük a kosár megjelenést
+  closePaymentPopup();
 }
