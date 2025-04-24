@@ -96,10 +96,16 @@ function closePaymentPopup() {
 }
 
 function finalizeOrder() {
-  const selectedBreak = document.querySelector('input[name="szunet"]:checked').value;
+  const selectedBreak = document.querySelector('input[name="szunet"]:checked')?.value;
+
+  if (!selectedBreak) {
+    alert("Válassz egy szünetet!");
+    return;
+  }
+
   alert(`Köszi a rendelést! Átveszed: ${selectedBreak}`);
 
-  cart = []; // ürítjük a kosarat
-  updateCartDisplay(); // frissítjük a kosár megjelenést
-  closePaymentPopup();
+  cart = []; // Kosár ürítése
+  updateCartUI(); // Kosár frissítése
+  closePaymentPopup(); // Popup bezárása
 }
