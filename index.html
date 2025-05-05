@@ -6,45 +6,79 @@
     <title>Andris büfé - Főoldal</title>
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=bebas-neue:400" rel="stylesheet" />
+    <link href="https://fonts.bunny.net/css?family=abel:400" rel="stylesheet" />
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css" />
 
 </head>
 <body>
-    <div class="container">
-        <div class="menubar">
-            <div class="navbar">
-                <ul>
-                    <li><img src="assets\AndrisBufe_Kicsi.png" alt="Andris Büfé logo" height="75px"></li>
-                    <li><a href="index.html">Főoldal</a></li>
-                    <li><a href="etlap.html">Étlap</a></li>
-                    <li><a href="kapcsolat.html">Kapcsolat</a></li>
-                </ul>
-              </div>
-        </div>
+    <div class="menubar">
+        <div class="navbar">
+            <ul>
+                <li><img src="assets\AndrisBufe_Kicsi.png" alt="Andris Büfé logo" height="75px"></li>
+                <li><a href="index.html">Főoldal</a></li>
+                <li><a href="etlap.html">Étlap</a></li>
+                <li><a href="rendeles.html">Rendelés</a></li>
+                <li><a href="kapcsolat.html">Kapcsolat</a></li>
+            </ul>
+          </div>
+    </div>
 
+    <div class="container">
         <h1 style="font-family: 'Bebas Neue', display; text-align: center;">Üdvözöllek Andris büféjében! 🥪</h1>
 
         <table>
             <tr>
                 <td>
-                     <!-- Slider -->
-                    <section class="container">
-                         <div class="slider-wrapper">
-                             <div class="slider">
-                                    <img id="slide-1" src="https://images.unsplash.com/photo-1656464868371-602be27fd4c2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80" alt="3D rendering of an imaginary orange planet in space" />
-                                    <img id="slide-2" src="https://images.unsplash.com/photo-1657586640569-4a3d4577328c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80" alt="3D rendering of an imaginary green planet in space" />
-                                    <img id="slide-3" src="https://images.unsplash.com/photo-1656077217715-bdaeb06bd01f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80" alt="3D rendering of an imaginary blue planet in space" />
-                        </div>
-                        <div class="slider-nav">
-                            <a href="#slide-1"></a>
-                            <a href="#slide-2"></a>
-                            <a href="#slide-3"></a>
-                        </div>
-                        </div>
-        </section>
+                    <sl-carousel autoplay loop pagination class="andris-carousel">
+                        <sl-carousel-item>
+                          <img
+                            alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
+                            src="/assets/examples/carousel/mountains.jpg"
+                          />
+                        </sl-carousel-item>
+                        <sl-carousel-item>
+                          <img
+                            alt="A waterfall in the middle of a forest (by Thomas Kelly on Unsplash)"
+                            src="/assets/examples/carousel/waterfall.jpg"
+                          />
+                        </sl-carousel-item>
+                        <sl-carousel-item>
+                          <img
+                            alt="The sun is setting over a lavender field (by Leonard Cotte on Unsplash)"
+                            src="/assets/examples/carousel/sunset.jpg"
+                          />
+                        </sl-carousel-item>
+                        <sl-carousel-item>
+                          <img
+                            alt="A field of grass with the sun setting in the background (by Sapan Patel on Unsplash)"
+                            src="/assets/examples/carousel/field.jpg"
+                          />
+                        </sl-carousel-item>
+                        <sl-carousel-item>
+                          <img
+                            alt="A scenic view of a mountain with clouds rolling in (by V2osk on Unsplash)"
+                            src="/assets/examples/carousel/valley.jpg"
+                          />
+                        </sl-carousel-item>
+                      </sl-carousel>
                 </td>
                 <td>
-                    <h2></h2>
+                    <h2>Miért a PG Büfé?</h2>
+                    <p>Éhes vagy? Elfelejtettél otthonról reggelit hozni? Vagy ehetetlen volt a kollégiumi reggeli? Gyere Andrishoz,
+                        és vegyél egy finom szendvicset! (Vagy kettőt...)
+
+                        <br>
+                        <br>
+
+                        <span style="font-weight: bolder;">Nyitvatartás:</span> Első óra előtt, 1-5. szünetekben.
+
+                        <br>
+                        <br>
+
+                        Még jobb, mostmár <a href="rendeles.html">online rendelési lehetőséget</a> is biztosítunk, hogy ne kelljen sorban állnod!
+
+                    </p>
                 </td>
             </tr>
         </table>
@@ -72,12 +106,14 @@
                   
                 </div>
                 <div class="ajanlat-box">
-                  <h3>Diákbarát árak</h3>
-                  <p>Kedvező menük és akciók sulisoknak.</p>
+                  <h3>Barackos Lipton Ice Tea</h3>
+                  <p>Jobb, mint a víz... </p>
+                  <img src="assets/barackoslipton.png" alt="" width="40%">
                 </div>
                 <div class="ajanlat-box">
-                  <h3>Hűségprogram</h3>
-                  <p>Gyűjts pecsétet, egyél olcsóbban!</p>
+                  <h3>Sokféle Frispy Chips</h3>
+                  <p>Csak Szijártó Sándor tanár úrnak ne adj belőle sokat! 😉</p>
+                  <img src="assets/fripsy_hotdog.png" alt="" width="50%">
                 </div>
               </div>            
         </section>
@@ -87,15 +123,26 @@
 
     <footer>
         <div class="footer-content">
-            <p>&copy; 2025 Andris Bufe. Minden jog fenntartva.</p>
+            <p>&copy; 2025 Andris Büfé. Minden jog fenntartva.</p>
             <ul class="footer-links">
                 <li><a href="index.html">Főoldal</a></li>
+                <li><a href="etlap.html">Étlap</a></li>
+                <li><a href="rendeles.html">Rendelés</a></li>
                 <li><a href="kapcsolat.html">Kapcsolat</a></li>
             </ul>
+            <p>Ma <span style="font-weight: bold;" id="nevnapcontainer"></span> ünnepli névnapját.</p>
         </div>
     </footer>
 
-    <script src="slider.js"></script>
+
+    <script src="https://unpkg.com/nevnap@latest"></script>
+    <script>
+        document.getElementById('nevnapcontainer').textContent = nevnap.today()
+    </script>
+
+    
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"></script>
+    
     
 </body>
 </html>
