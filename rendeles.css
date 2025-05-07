@@ -1,0 +1,321 @@
+/* Navigációs sáv stílusa */
+.navbar {
+  background-color: #333; /* Háttérszín sötétszürkére */
+  padding: 10px 20px; /* Belső margók */
+}
+
+/* Navigációs lista stílusa */
+.navbar ul {
+  list-style: none; /* Listaelemek jelöléseinek eltüntetése */
+  padding: 0;
+  display: flex; /* Vízszintes elrendezés */
+  gap: 20px; /* Elemek közti tér */
+  font-family: 'Bebas Neue', display; /* Betűtípus */
+  font-size: 25px;
+}
+
+/* Linkek a navigációs sávban */
+.navbar a {
+  text-decoration: none; /* Aláhúzás eltüntetése */
+  color: white; /* Fehér szöveg */
+  font-weight: bold;
+}
+
+/* Hover effekt linkeknél */
+.navbar a:hover {
+  color: orange; /* Narancssárga ha fölé viszed az egeret */
+}
+
+/* Fejléc cím */
+h1 {
+  font-family: 'Bebas Neue', display;
+  font-size: 36px;
+}
+
+/* Lábléc stílus */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center; /* Középre igazított szöveg */
+}
+
+/* Lábléc tartalom konténer */
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Közösségi és egyéb linkek listája */
+.social-links,
+.footer-links {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Listaelemek megjelenítése egymás mellett */
+.social-links li,
+.footer-links li {
+  display: inline;
+  margin-right: 15px;
+  font-family: Beb;
+}
+
+/* Linkek stílusa */
+.social-links li a,
+.footer-links li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Hover effekt a linkeknél a láblécben */
+.social-links li a:hover,
+.footer-links li a:hover {
+  text-decoration: underline;
+}
+
+/* Rendelés címsor */
+#rendelesfej {
+  text-align: center;
+  font-size: 60px;
+}
+
+/* Rendelés elem animáció alapja */
+.rendeleselem {
+  transition: 0.3s ease;
+}
+
+/* Hover effekt: kicsit felnagyítja az elemet */
+.rendeleselem:hover {
+  transform: scale(1.05);
+}
+
+/* Rendelés elem árának stílusa */
+.rendeleselemar {
+  font-family: 'Bebas Neue', display;
+  font-size: 30px;
+}
+
+/* Oldalsó panel pozícionálása */
+#oldalpanel {
+  position: relative;
+  top: 0px;
+  margin-left: 100px;
+  width: 150px;
+  height: 100%;
+}
+
+/* Felugró ablak stílusa */
+#popup {
+  width: 500px;
+  height: auto;
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Középre igazítás */
+  padding: 25px 30px;
+  background: linear-gradient(135deg, #ffffff, #f9f9f9); /* Átmenetes háttér */
+  border: 4px solid #333;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25); /* Árnyék */
+  z-index: 1000;
+  border-radius: 25px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Felugró cím stílusa */
+#popup h3.popup-title {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+/* Háttér elhomályosítás */
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 999;
+}
+
+/* Választható opciók a popupban */
+.popup-options label {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  margin: 8px 0;
+  cursor: pointer;
+  color: #444;
+  transition: color 0.2s ease;
+}
+
+.popup-options label:hover {
+  color: #111;
+}
+
+/* Jelölőnégyzet és rádiógomb formázása */
+.popup-options input[type="radio"],
+.popup-options input[type="checkbox"] {
+  margin-right: 10px;
+  transform: scale(1.2);
+  accent-color: #4caf50; /* Zöld szín */
+}
+
+/* Gombok konténer */
+.popup-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* Gombok stílusa */
+.popup-buttons button {
+  flex: 1;
+  padding: 10px 0;
+  font-size: 16px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.popup-buttons button:hover {
+  background-color: #43a047;
+}
+
+/* Mégse gomb stílusa */
+.popup-buttons .cancel {
+  background-color: #e53935;
+}
+
+.popup-buttons .cancel:hover {
+  background-color: #c62828;
+}
+
+/* Kosár ikon elhelyezése */
+#cart-icon {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+/* Kosár elem számláló */
+#cart-count {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background: crimson;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+/* Kosár tartalom popup */
+#cart-popup {
+  display: none;
+  position: fixed;
+  top: 70px;
+  right: 30px;
+  width: 300px;
+  background: white;
+  border: 3px solid #333;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  z-index: 1100;
+  padding: 15px;
+}
+
+/* Kosárban lévő elemek listája */
+#cart-popup ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 250px;
+  overflow-y: auto; /* Görgethető tartalom ha sok elem van */
+}
+
+/* Kosár egyes elemei */
+#cart-popup li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid #ccc;
+  font-size: 15px;
+}
+
+/* Kosárból törlés gomb */
+#cart-popup li button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: crimson;
+  cursor: pointer;
+}
+
+/* Kosár végösszeg */
+#cart-total {
+  margin-top: 10px;
+  font-weight: bold;
+  text-align: right;
+  font-size: 16px;
+}
+
+/* Fizetés gomb stílus */
+#checkout-btn {
+  margin-top: 10px;
+  width: 100%;
+  background: #27ae60;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#checkout-btn:hover {
+  background: #219150;
+}
+
+/* Fizetési popup stílus */
+#paymentPopup {
+  width: 500px;
+  padding: 20px;
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border: 5px solid #333;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  border-radius: 25px;
+  z-index: 1001;
+}
+
+/* Fizetési opciók címkéinek stílusa */
+.payment-options label {
+  display: block;
+  margin: 5px 0;
+  padding: 0;
+}
+
+.payment-options label {
+  display: block;
+  margin-bottom: 10px;
+}
