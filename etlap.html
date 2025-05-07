@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andris büfé - Főoldal</title>
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=bebas-neue:400" rel="stylesheet" />
+    <link href="https://fonts.bunny.net/css?family=abel:400" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="etlap.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css" />
+
+</head>
+<body>
+    <div class="menubar">
+        <div class="navbar">
+            <ul>
+                <li><img src="assets\AndrisBufe_Kicsi.png" alt="Andris Büfé logo" height="75px"></li>
+                <li><a href="index.html">Főoldal</a></li>
+                <li><a href="etlap.html">Étlap</a></li>
+                <li><a href="rendeles.html">Rendelés</a></li>
+            </ul>
+          </div>
+    </div>
+
+    <h1>Étlap</h1>
+    <table style="font-family: 'Bebas Neue', display;">
+        <thead style="font-size: 30px;">
+            <td style="padding-right: 30px;">Szendvicsek🍔</td>
+            <td style="padding-right: 30px;"></td>
+        </thead>
+        <tr>
+            <td>Nagy szendvicsek</td>
+            <td>950 Ft</td>
+        </tr>
+        <tr>
+            <td>Közepes szendvicsek</td>
+            <td>850 Ft</td>
+        </tr>
+        <tr>
+            <td>Kis szendvicsek</td>
+            <td>650 Ft</td>
+        </tr>
+        <tr>
+            <td>Ketchup/mustár/majonéz</td>
+            <td>+50 Ft</td>
+        </tr>
+    </table>
+    <table style="font-family: 'Bebas Neue', display;">
+        <thead style="font-size: 30px;">
+            <td style="padding-right: 70px;">Snackek🍟</td>
+            <td style="padding-right: 30px;"></td>
+        </thead>
+        <tr>
+            <td>Snickers</td>
+            <td>350 Ft</td>
+        </tr>
+        <tr>
+            <td>Frisps</td>
+            <td>400 Ft</td>
+        </tr>
+        <tr>
+            <td>Cerbona müzliszelet</td>
+            <td>230 Ft</td>
+        </tr>
+        <tr>
+            <td>Brownie</td>
+            <td>370 Ft</td>
+        </tr>
+        <tr>
+            <td>Twix</td>
+            <td>390 Ft</td>
+        </tr>
+    </table>
+    <table style="font-family: 'Bebas Neue', display;">
+        <thead style="font-size: 30px;">
+            <td style="padding-right: 95px;">Italok🥤</td>
+            <td style="padding-right: 30px;"></td>
+        </thead>
+        <tr>
+            <td>Forró tea</td>
+            <td>100 Ft/dl</td>
+        </tr>
+        <tr>
+            <td>Dr Pepper 330ml</td>
+            <td>450 Ft</td>
+        </tr>
+        <tr>
+            <td>Cola 330ml</td>
+            <td>500 Ft</td>
+        </tr>
+        <tr>
+            <td>Mountain Dew 500ml</td>
+            <td>480 Ft</td>
+        </tr>
+        <tr>
+            <td>Gyümölcslé 330ml</td>
+            <td>310 Ft</td>
+        </tr>
+        <tr>
+            <td>Ásványvíz 500ml</td>
+            <td>200 Ft</td>
+        </tr>
+    </table>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Andris Büfé. Minden jog fenntartva.</p>
+            <ul class="footer-links">
+                <li><a href="index.html">Főoldal</a></li>
+                <li><a href="etlap.html">Étlap</a></li>
+                <li><a href="rendeles.html">Rendelés</a></li>
+            </ul>
+            <p>Ma <span style="font-weight: bold;" id="nevnapcontainer"></span> ünnepli névnapját.</p>
+        </div>
+    </footer>
+
+
+    <script src="https://unpkg.com/nevnap@latest"></script>
+    <script>
+        document.getElementById('nevnapcontainer').textContent = nevnap.today()
+    </script>
+
+    
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"></script>
+    
+    
+</body>
+</html>
