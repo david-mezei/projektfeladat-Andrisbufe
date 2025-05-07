@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andris büfé - Főoldal</title>
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=bebas-neue:400" rel="stylesheet" />
+    <link rel="stylesheet" href="rendeles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="menubar">
+            <div class="navbar">
+                <ul>
+                    <li><img src="assets\AndrisBufe_Kicsi.png" alt="Andris Büfé logo" height="75px"></li>
+                    <li><a href="index.html">Főoldal</a></li>
+                    <li><a href="etlap.html">Étlap</a></li>
+                    <li><a href="rendeles.html">Rendelés</a></li>
+                </ul>
+              </div>
+        </div>
+
+        <h1 id="rendelesfej">Rendelj online és vedd át Andrisnál!</h1>
+
+        <table style="margin-left: auto; margin-right: auto;">
+            <tr>
+                <th class="rendeleselem"><img src="assets/KicsiSzenya.png" class="popup-trigger" alt="Kicsi szendvics" data-type="szenya" data-price="470"></th>
+                <th class="rendeleselem"><img src="assets/KozepesSzenya.png" class="popup-trigger" alt="Közepes szendvics" data-type="szenya" data-price="790"></th>
+                <th class="rendeleselem"><img src="assets/NagySzenya.png" class="popup-trigger" alt="Nagy szendvics" data-type="szenya" data-price="970"></th>
+            </tr>
+            <tr>
+                <th class="rendeleselemar">470 Ft</th>
+                <th class="rendeleselemar">790 Ft</th>
+                <th class="rendeleselemar">970 Ft</th>
+            </tr>
+            <tr>
+                <th class="rendeleselem"><img src="assets/Pepsi.png" class="popup-trigger" alt="Pepsi" data-type="ital" data-price="450"></th>
+                <th class="rendeleselem"><img src="assets/Lipton.png" class="popup-trigger" alt="Lipton" data-type="ital" data-price="650"></th>
+                <th class="rendeleselem"><img src="assets/Asvanyviz.png" class="popup-trigger" alt="Ásvanyviz" data-type="ital" data-price="650"></th>
+            </tr>
+            <tr>
+                <th class="rendeleselemar">450 Ft</th>
+                <th class="rendeleselemar">650 Ft</th>
+                <th class="rendeleselemar">650 Ft</th>
+            </tr>
+        </table>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Andris Büfé. Minden jog fenntartva.</p>
+            <ul class="footer-links">
+                <li><a href="index.html">Főoldal</a></li>
+                <li><a href="etlap.html">Étlap</a></li>
+                <li><a href="rendeles.html">Rendelés</a></li>
+            </ul>
+            <p>Ma <span style="font-weight: bold;" id="nevnapcontainer"></span> ünnepli névnapját.</p>
+        </div>
+    </footer>
+
+
+    <script src="https://unpkg.com/nevnap@latest"></script>
+    <script>
+        document.getElementById('nevnapcontainer').textContent = nevnap.today()
+    </script>
+    
+    
+    <div id="overlay"></div>
+  
+<div id="popup" class="popup">
+  <h3 class="popup-title">Mit kérsz bele?</h3>
+
+  <div class="popup-options">
+    <label><input type="radio" name="zoldseg" value="Salátás" checked> 🥬 Salátás</label>
+    <label><input type="radio" name="zoldseg" value="Uborkás"> 🥒 Uborkás</label>
+    <label><input type="radio" name="zoldseg" value="Zsöldség nélkül"> Zsöldség nélkül</label>
+
+    <label><input type="checkbox" name="szosz" value="Ketchup"> Ketchup</label>
+    <label><input type="checkbox" name="szosz" value="Mustár"> Mustár</label>
+    <label><input type="checkbox" name="szosz" value="Majonéz"> Majonéz</label>
+    <label><input type="checkbox" name="szosz" value="Marha erős"> Marha erős</label>
+  </div>
+
+  <div class="popup-buttons">
+    <button onclick="submitForm()">Kosárba</button>
+    <button onclick="closePopup()" class="cancel">Mégse</button>
+  </div>
+</div>
+
+<!-- Kosár ikon -->
+<div id="cart-icon" onclick="toggleCartPopup()">
+  🛒 <span id="cart-count">0</span>
+</div>
+
+<div id="cart-popup">
+  <ul id="cart-items"></ul>
+  <div id="cart-total">Végösszeg: 0 Ft</div>
+  <button id="checkout-btn" onclick="openPaymentPopup()">Rendelés leadása</button>
+</div>
+
+<div id="paymentPopup" class="popup">
+    <h3>Melyik szünetben veszed át?</h3>
+    <div class="payment-options">
+        <label><input type="radio" name="szunet" value="7:00-7:15" checked> 7:00-7:15</label>
+        <label><input type="radio" name="szunet" value="8:00-8:10"> 8:00-8:10</label>
+        <label><input type="radio" name="szunet" value="8:55-9:05"> 8:55-9:05</label>
+        <label><input type="radio" name="szunet" value="9:50-10:00"> 9:50-10:00</label>
+        <label><input type="radio" name="szunet" value="10:45-10:55"> 10:45-10:55</label>
+        <label><input type="radio" name="szunet" value="11:40-11:55"> 11:40-11:55</label>        
+    </div>
+  
+    <div class="popup-buttons">
+      <button onclick="finalizeOrder()">Megrendelem</button>
+      <button onclick="closePaymentPopup()">Mégse</button>
+    </div>
+  </div>
+  
+<script src="script_rendeles.js"></script>
+</body>
+</html>
