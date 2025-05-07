@@ -16,7 +16,7 @@
                     <li><img src="assets\AndrisBufe_Kicsi.png" alt="Andris Büfé logo" height="75px"></li>
                     <li><a href="index.html">Főoldal</a></li>
                     <li><a href="etlap.html">Étlap</a></li>
-                    <li><a href="kapcsolat.html">Kapcsolat</a></li>
+                    <li><a href="rendeles.html">Rendelés</a></li>
                 </ul>
               </div>
         </div>
@@ -48,18 +48,21 @@
     </div>
     <footer>
         <div class="footer-content">
-            <p>&copy; 2025 Andris Bufe. Minden jog fenntartva.</p>
-            <ul class="social-links">
-                <li><a href="https://facebook.com" target="_blank">Facebook</a></li>
-                <li><a href="https://twitter.com" target="_blank">Twitter</a></li>
-                <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
-            </ul>
+            <p>&copy; 2025 Andris Büfé. Minden jog fenntartva.</p>
             <ul class="footer-links">
                 <li><a href="index.html">Főoldal</a></li>
-                <li><a href="kapcsolat.html">Kapcsolat</a></li>
+                <li><a href="etlap.html">Étlap</a></li>
+                <li><a href="rendeles.html">Rendelés</a></li>
             </ul>
+            <p>Ma <span style="font-weight: bold;" id="nevnapcontainer"></span> ünnepli névnapját.</p>
         </div>
     </footer>
+
+
+    <script src="https://unpkg.com/nevnap@latest"></script>
+    <script>
+        document.getElementById('nevnapcontainer').textContent = nevnap.today()
+    </script>
     
     
     <div id="overlay"></div>
