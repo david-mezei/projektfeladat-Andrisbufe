@@ -25,11 +25,11 @@ Az alábbiakban részletezzük mindenkinek a munkáját.
 ```
 
 ## Rendelés (Ati)
-- A rendelés oldalon kosárba tudod tenni a megvásáorlni kívánt terméket, és ízlésed szerint alakítani a szendvicseket.
+- A rendelés oldalon kosárba tudod tenni a megvásárolni kívánt terméket, és ízlésed szerint alakítani a szendvicseket.
 - A oldal működéséért egy javascript dolgozik a háttérben.
 
 ### Codesnippet
-*a szendvicsek testraszabásáért felelős felület:*
+*a szendvicsek testreszabásáért felelős felület:*
 ```html
 <div id="popup" class="popup">
   <h3 class="popup-title">Mit kérsz bele?</h3>
