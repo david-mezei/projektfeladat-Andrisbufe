@@ -24,7 +24,34 @@ Az alábbiakban részletezzük mindenkinek a munkáját.
     </footer>
 ```
 
-## Rendelés (Attila)
+## Rendelés (Ati)
+- A rendelés oldalon kosárba tudod tenni a megvásáorlni kívánt terméket, és ízlésed szerint alakítani a szendvicseket.
+- A oldal működéséért egy javascript dolgozik a háttérben.
+
+### Codesnippet
+*a szendvicsek testraszabásáért felelős felület:*
+```html
+<div id="popup" class="popup">
+  <h3 class="popup-title">Mit kérsz bele?</h3>
+
+  <div class="popup-options">
+    <label><input type="radio" name="zoldseg" value="Salátás" checked> 🥬 Salátás</label>
+    <label><input type="radio" name="zoldseg" value="Uborkás"> 🥒 Uborkás</label>
+    <label><input type="radio" name="zoldseg" value="Zsöldség nélkül"> Zsöldség nélkül</label>
+
+    <label><input type="checkbox" name="szosz" value="Ketchup"> Ketchup</label>
+    <label><input type="checkbox" name="szosz" value="Mustár"> Mustár</label>
+    <label><input type="checkbox" name="szosz" value="Majonéz"> Majonéz</label>
+    <label><input type="checkbox" name="szosz" value="Marha erős"> Marha erős</label>
+  </div>
+
+  <div class="popup-buttons">
+    <button onclick="submitForm()">Kosárba</button>
+    <button onclick="closePopup()" class="cancel">Mégse</button>
+  </div>
+</div>
+```
+
 ## Étlap (Tomi)
 - Az étlapon tudod megtekinteni a rendelni kívánt termékeket és azok árait.
 - A termékek három fő csoportra vannak osztva.
